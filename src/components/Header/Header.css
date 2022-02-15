@@ -1,0 +1,82 @@
+.hae_header_wrap {
+  background-color: #f8f8f8;
+  font-size: var(--p-f);
+  font-weight: var(--p-b);
+}
+
+.hae_header_top {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: var(--out-w);
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.hae_header_logo {
+  width: 50px;
+  height: 45px;
+}
+
+.hae_header_logo:hover {
+  cursor: pointer;
+}
+
+.hae_header_nav {
+  display: flex;
+  gap: 10px;
+}
+
+.hae_header_nav > a {
+  padding: 5px 10px;
+  border: 1px solid black;
+  align-self: center;
+  text-align: center;
+
+  min-width: 200px;
+  text-decoration: none;
+  color: #000;
+}
+
+.hae_nl_active {
+  background-color: #666 !important;
+  color: #fff !important;
+}
+
+.hae_header_login {
+  padding: 5px 10px;
+  border: 1px solid black;
+  align-self: center;
+  text-align: center;
+}
+
+.hae_header_login:hover {
+  cursor: pointer;
+}
+
+.hae_header_mid {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-width: var(--in-w);
+  display: flex;
+  justify-content: space-between;
+}
+
+.hae_header_mid h2 {
+  padding-bottom: 10px;
+  font-size: var(--h2-f);
+  font-weight: var(--h2-b);
+}
+
+.hae_header_mid > div:first-child > p {
+  max-width: 300px;
+}
+
+.hae_header_mid > div:last-child {
+  align-self: flex-end;
+}
