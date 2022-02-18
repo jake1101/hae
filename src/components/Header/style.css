@@ -30,7 +30,7 @@
   gap: 10px;
 }
 
-.hae_header_nav > a {
+.hae_header_nav > * {
   padding: 5px 10px;
   border: 1px solid black;
   align-self: center;
@@ -41,9 +41,52 @@
   color: #000;
 }
 
-.hae_nl_active {
+.hae_nl {
+  position: relative;
+}
+
+.hae_nl.active {
   background-color: #666 !important;
   color: #fff !important;
+}
+
+.hae_nl_dropdown {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.hae_nl_dropdown.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hae_nl_dropdown li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #666666;
+}
+
+.hae_nl_dropdown a {
+  color: black;
+  text-decoration: none;
+}
+
+.hae_nl_dropdown li:last-child {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: none;
+}
+
+.hae_nl_dropdown li:hover {
+  background-color: #dddddd;
+  cursor: pointer;
 }
 
 .hae_header_login {
@@ -65,6 +108,7 @@
   max-width: var(--in-w);
   display: flex;
   justify-content: space-between;
+  gap: 500px;
 }
 
 .hae_header_mid h2 {
@@ -74,9 +118,15 @@
 }
 
 .hae_header_mid > div:first-child > p {
-  max-width: 300px;
+  max-height: 100px;
+  word-break: break-all;
+  overflow-y: hidden;
 }
 
 .hae_header_mid > div:last-child {
   align-self: flex-end;
+}
+
+.hae_step {
+  min-width: max-content;
 }

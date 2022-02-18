@@ -7,15 +7,25 @@
   font-weight: var(--p-b);
 }
 
-.hae_service_top {
+.hae_service_tab_wrap {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   text-align: center;
 }
 
-.hae_service_top > div {
+.hae_service_tab_wrap > * {
   border: 1px solid black;
   padding: 10px;
+}
+
+.hae_service_tab {
+  text-decoration: none;
+  color: #000;
+}
+
+.hae_service_tab.active {
+  background-color: #666 !important;
+  color: #fff !important;
 }
 
 .hae_service_mid {
@@ -34,7 +44,7 @@
 }
 
 .hae_service_thumbnail {
-  width: 345px;
+  width: 300px;
 }
 
 .hae_service_item > div:last-child {
@@ -52,5 +62,9 @@
 }
 
 .hae_service_expl p {
-  line-height: 140%;
+  height: 150px;
+  line-height: 30px;
+
+  word-break: break-all;
+  overflow-y: scroll;
 }
