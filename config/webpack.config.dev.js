@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
-console.log(path.resolve(__dirname, "../src"))
+console.log('dev',path.resolve(__dirname, "../build"));
 
 module.exports = {
   entry: "./src/index.jsx",
@@ -23,7 +23,8 @@ module.exports = {
   devServer: {
     static: path.resolve("../build"),
     open: "/",
-    port: 9000
+    port: 9000,
+    historyApiFallback: true
   },
   module: {
     rules: [
