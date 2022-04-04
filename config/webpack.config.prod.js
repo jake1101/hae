@@ -3,7 +3,6 @@ const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
-console.log('prod',path.resolve(__dirname, "../build"))
 
 module.exports = {
   entry: "./src/index.jsx",
@@ -14,6 +13,8 @@ module.exports = {
   resolve: {
     alias: {
       Components: path.resolve(__dirname, "../src/components"),
+      Common: path.resolve(__dirname, "../src/components/common"),
+      Content: path.resolve(__dirname, "../src/components/content"),
       Hooks: path.resolve(__dirname, "../src/hooks"),
       Images: path.resolve(__dirname, "../src/images")
     },
@@ -37,15 +38,11 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+        test: /\.(scss|css)$/,
+        use: [MiniCssExtractPlugin.loader,"css-loader", "sass-loader"]
       },
       {
-        test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-      },
-      {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|webp)$/i,
         use: ["file-loader"]
       }
     ]
